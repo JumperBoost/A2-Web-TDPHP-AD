@@ -29,3 +29,10 @@
 5. ✅
 6. ✅
 7. ✅
+
+## Exercice 4
+1. Bonjour Marc
+2. Bonjour Marc
+3. Bonjour\n $prenom
+4. Marc
+5. Marc
