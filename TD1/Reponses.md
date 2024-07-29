@@ -20,3 +20,12 @@
 2. Ouvrir le fichier php directement dans le navigateur affiche le code brut du fichier<br>
    Cela est dû au fait que le navigateur ne sait lire que du HTML/CSS pour afficher un format web (le cas échéant, il se contente d'afficher le fichier en brut)
 3. Lorsque l'on demande un fichier PHP à un serveur HTTP, le module <i>php</i> va interpréter le code php du fichier et renvoyer au format HTML
+
+## Exercice 3
+1. ✅
+2. ✅
+3. ✅
+4. ✅
+5. ✅
+6. ✅
+7. ✅
