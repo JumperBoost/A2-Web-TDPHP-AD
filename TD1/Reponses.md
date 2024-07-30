@@ -71,3 +71,8 @@
    - **Comment s’appelle la partie de l’URL contenant les informations ?**
      <br>   ➯ Chaîne de requête _(query string)_
 5. ✅
+
+## Exercice 10
+1. ✅
+2. ✅
+3. ✅
