@@ -50,14 +50,14 @@
 
             $marque = "Renault";
             $couleur = "Noir";
-            $immatriculation = "GG-254-WP";
+            $immatriculation = "GG254WP";
             $nbSieges = 5;
             echo "<p>Voiture $immatriculation de marque $marque (couleur $couleur, $nbSieges sieges)</p>";
 
             $voiture = [
                 'marque' => 'Audi',
                 'couleur' => 'Orange',
-                'immatriculation' => "BC-397-WW",
+                'immatriculation' => "BC397WW",
                 'nbSieges' => 2
             ];
             var_dump($voiture);
@@ -67,7 +67,7 @@
                 0 => ['marque' => $marque, 'couleur' => $couleur, 'immatriculation' => $immatriculation, 'nbSieges' => $nbSieges],
                 1 => $voiture,
             ];
-            $voitures[] = ['marque' => 'Peugeot', 'couleur' => 'Bleu', 'immatriculation' => 'CD-123-BT', 'nbSieges' => 5];
+            $voitures[] = ['marque' => 'Peugeot', 'couleur' => 'Bleu', 'immatriculation' => 'CD123BT', 'nbSieges' => 5];
             var_dump($voitures);
 
             echo "<h1>Liste des voitures</h1>";

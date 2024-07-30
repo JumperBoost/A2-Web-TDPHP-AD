@@ -46,7 +46,7 @@ class Voiture {
         $couleur,
         $nbSieges
     ) {
-        $this->immatriculation = substr($immatriculation, 8);
+        $this->immatriculation = substr($immatriculation, 0, 8);
         $this->marque = $marque;
         $this->couleur = $couleur;
         $this->nbSieges = $nbSieges;
