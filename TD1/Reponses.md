@@ -1,4 +1,4 @@
-# Réponses aux questions du <u>TD1 - Introduction aux objets en PHP</u>
+# Réponses aux questions du TD1 - Introduction aux objets en PHP
 
 ## Exercice 1
 1. ✅
@@ -36,3 +36,10 @@
 3. Bonjour\n $prenom
 4. Marc
 5. Marc
+
+## Exercice 5
+1. ✅
+2. ✅
+3. ✅
+4. ✅
+5. ✅
