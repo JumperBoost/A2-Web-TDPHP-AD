@@ -1,16 +1,12 @@
 <?php
-    // On inclut les fichiers de classe PHP pour pouvoir se servir de la classe ConfigurationBaseDeDonnees.
-    // require_once évite que ConfigurationBaseDeDonnees.php soit inclus plusieurs fois,
-    // et donc que la classe ConfigurationBaseDeDonnees soit déclaré plus d'une fois.
-    require_once 'ConfigurationBaseDeDonnees.php';
+    require_once "ConnexionBaseDeDonnees.php";
 
-    // On affiche le login de la base de donnees
-    echo ConfigurationBaseDeDonnees::getLogin();
-    echo "<br>";
-    echo ConfigurationBaseDeDonnees::getNomHote();
-    echo "<br>";
-    echo ConfigurationBaseDeDonnees::getPort();
-    echo "<br>";
-    echo ConfigurationBaseDeDonnees::getNomBaseDeDonnees();
-    echo "<br>";
-    echo ConfigurationBaseDeDonnees::getPassword();
+    // On affiche un attribut de PDO pour vérifier  que la connexion est bien établie.
+    // Cela renvoie par ex. "webinfo.iutmontp.univ-montp2.fr via TCP/IP"
+    // mais surtout pas de message d'erreur
+    // SQLSTATE[HY000] [1045] Access denied for user ... (mauvais mot de passe)
+    // ou
+    // SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed (mauvais nom d'hôte)
+    $model = new ConnexionBaseDeDonnees();
+    echo $model->getPdo()->getAttribute(PDO::ATTR_CONNECTION_STATUS);
+?>
