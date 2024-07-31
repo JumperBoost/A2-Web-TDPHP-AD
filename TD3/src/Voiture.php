@@ -87,6 +87,7 @@ class Voiture {
         $sql = "SELECT * from voiture WHERE immatriculation = :immatriculationTag";
         // Préparation de la requête
         $pdoStatement = ConnexionBaseDeDonnees::getPdo()->prepare($sql);
+        $pdoStatement->setFetchMode(PDO::FETCH_ASSOC);
 
         $values = array(
             "immatriculationTag" => $immatriculation

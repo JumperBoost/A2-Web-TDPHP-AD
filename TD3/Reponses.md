@@ -47,3 +47,7 @@
 1. ✅
 2. ✅
 3. `'; DELETE FROM voiture2;--`
+
+## Exercice 9
+1. ✅
+2. ✅
