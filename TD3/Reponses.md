@@ -26,3 +26,7 @@
 ## Exercice 5
 1. ✅
 2. ✅
+
+## Exercice 6
+1. ✅
+2. ✅

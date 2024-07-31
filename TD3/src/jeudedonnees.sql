@@ -18,9 +18,9 @@ CREATE TABLE trajet (
     prix INT NOT NULL,
     conducteurLogin VARCHAR(32) NOT NULL,
     CONSTRAINT trajet_pk PRIMARY KEY (id),
-    CONSTRAINT trajet_conducteur_fk FOREIGN KEY (conducteurLogin) REFERENCES utilisateur(login),
-    CONSTRAINT nbPlacesNonNegatif CHECK (nbPlaces >= 0),
-    CONSTRAINT prixNonNegatif CHECK (prix >= 0)
+    CONSTRAINT trajet_conducteur_fk FOREIGN KEY (conducteurLogin) REFERENCES utilisateur(login) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT trajet_nbPlacesNonNegatif CHECK (nbPlaces >= 0),
+    CONSTRAINT trajet_prixNonNegatif CHECK (prix >= 0)
 );
 
 
