@@ -149,7 +149,7 @@ class Trajet {
         return $passagers;
     }
 
-    public static function supprimerPassager(int $trajetId, string $passagerLogin) : void {
+    public static function supprimerPassager(int $trajetId, string $passagerLogin) : bool {
         $pdoStatement = ConnexionBaseDeDonnees::getPdo()->prepare("DELETE FROM passager WHERE trajetId = :trajetIdTag AND passagerId = :passagerIdTag");
         $pdoStatement->setFetchMode(PDO::FETCH_ASSOC);
         $values = [
@@ -158,5 +158,6 @@ class Trajet {
         ];
 
         $pdoStatement->execute($values);
+        return $pdoStatement->rowCount() == 1;
     }
 }
