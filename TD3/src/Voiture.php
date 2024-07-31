@@ -54,6 +54,19 @@ class Voiture {
         $this->nbSieges = $nbSieges;
     }
 
+    public function ajouter() : void {
+        $pdo = ConnexionBaseDeDonnees::getPdo();
+        $pdoStatement = $pdo->prepare("INSERT INTO voiture VALUES (:immatriculationTag, :marqueTag, :couleurTag, :nbSiegesTag)");
+
+        $values = [
+            "immatriculationTag" => $this->immatriculation,
+            "marqueTag" => $this->marque,
+            "couleurTag" => $this->couleur,
+            "nbSiegesTag" => $this->nbSieges
+        ];
+        $pdoStatement->execute($values);
+    }
+
     public static function construireDepuisTableau(array $voitureFormatTableau) : Voiture {
         return new Voiture($voitureFormatTableau['immatriculation'], $voitureFormatTableau['marque'], $voitureFormatTableau['couleur'], $voitureFormatTableau['nbSieges']);
     }
