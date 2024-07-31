@@ -1,5 +1,6 @@
 <?php
 require_once 'ConnexionBaseDeDonnees.php';
+require_once 'Utilisateur.php';
 
 class Trajet {
 
@@ -122,6 +123,7 @@ class Trajet {
      */
     public static function getTrajets() : array {
         $pdoStatement = ConnexionBaseDeDonnees::getPDO()->query("SELECT * FROM trajet");
+        $pdoStatement->setFetchMode(PDO::FETCH_ASSOC);
 
         $trajets = [];
         foreach($pdoStatement as $trajetFormatTableau) {
@@ -129,5 +131,21 @@ class Trajet {
         }
 
         return $trajets;
+    }
+
+    /**
+     * @return Utilisateur[]
+     */
+    public static function getPassagers(int $id) : array {
+        $pdoStatement = ConnexionBaseDeDonnees::getPdo()->prepare("SELECT * FROM passager JOIN utilisateur ON login = passagerId WHERE trajetId = :idTag");
+        $pdoStatement->setFetchMode(PDO::FETCH_ASSOC);
+        $values = ["idTag" => $id];
+
+        $pdoStatement->execute($values);
+        $passagers = [];
+        foreach ($pdoStatement as $passager) {
+            $passagers[] = Utilisateur::construireDepuisTableau($passager);
+        }
+        return $passagers;
     }
 }
