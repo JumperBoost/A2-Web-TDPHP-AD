@@ -148,4 +148,15 @@ class Trajet {
         }
         return $passagers;
     }
+
+    public static function supprimerPassager(int $trajetId, string $passagerLogin) : void {
+        $pdoStatement = ConnexionBaseDeDonnees::getPdo()->prepare("DELETE FROM passager WHERE trajetId = :trajetIdTag AND passagerId = :passagerIdTag");
+        $pdoStatement->setFetchMode(PDO::FETCH_ASSOC);
+        $values = [
+            "trajetIdTag" => $trajetId,
+            "passagerIdTag" => $passagerLogin
+        ];
+
+        $pdoStatement->execute($values);
+    }
 }

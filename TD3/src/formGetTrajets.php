@@ -11,7 +11,7 @@
             <legend>Visualiser les trajets d'un passager</legend>
             <p>
                 <label for="passager_id">Identifiant du passager</label> :
-                <input type="text" placeholder="1" name="id" id="passager_id" required/>
+                <input type="text" placeholder="u1" name="id" id="passager_id" required/>
             </p>
 
             <p>
