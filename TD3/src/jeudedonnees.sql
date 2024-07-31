@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS passager;
 DROP TABLE IF EXISTS trajet;
 DROP TABLE IF EXISTS utilisateur;
 
@@ -23,6 +24,14 @@ CREATE TABLE trajet (
     CONSTRAINT trajet_prixNonNegatif CHECK (prix >= 0)
 );
 
+CREATE TABLE passager (
+    trajetId INT,
+    passagerId VARCHAR(32),
+    CONSTRAINT passager_pk PRIMARY KEY (trajetId, passagerId),
+    CONSTRAINT passager_trajetId_fk FOREIGN KEY (trajetId) REFERENCES trajet(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT passager_passagerId_fk FOREIGN KEY (passagerId) REFERENCES utilisateur(login) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 
 INSERT INTO utilisateur VALUES ('u1', 'Dupont', 'Pierre');
 INSERT INTO utilisateur VALUES ('u2', 'Bigard', 'Jean-Marie');
@@ -34,3 +43,9 @@ INSERT INTO trajet (depart, arrivee, date, nbPlaces, prix, conducteurLogin)
     VALUES ('Paris', 'Toulouse', '2024-08-12', 570, 450, 'u2');
 INSERT INTO trajet (depart, arrivee, date, nbPlaces, prix, conducteurLogin)
     VALUES ('Lille', 'Rennes', '2024-08-09', 210, 80, 'u3');
+
+INSERT INTO passager VALUES ('1', 'u2');
+INSERT INTO passager VALUES ('1', 'u3');
+INSERT INTO passager VALUES ('2', 'u1');
+INSERT INTO passager VALUES ('3', 'u1');
+INSERT INTO passager VALUES ('3', 'u2');
