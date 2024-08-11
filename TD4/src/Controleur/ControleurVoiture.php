@@ -15,6 +15,10 @@ class ControleurVoiture {
         else self::afficherVue("voiture/erreur.php");
     }
 
+    public static function afficherFormulaireCreation() : void {
+        self::afficherVue("voiture/formulaireCreation.php");
+    }
+
     private static function afficherVue(string $cheminVue, array $parametres = []) : void {
         extract($parametres); // Crée des variables à partir du tableau $parametres
         require "../vue/$cheminVue"; // Charge la vue
