@@ -19,3 +19,8 @@
    - Affichage des données via la vue
 
     La seule différence est que la vue est mieux structurée et comporte du HTML.
+
+## Exercice 4
+1. ✅
+2. ✅
+3. `routeur.php` exécute `ControleurVoiture.php::afficherListe()`, puis est exécuté dans l'ordre cité dans l'exercice précédent.
