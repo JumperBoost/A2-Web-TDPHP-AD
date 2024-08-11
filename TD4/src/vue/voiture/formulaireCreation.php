@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form method="get" action="">
+<form method="get">
     <fieldset>
         <legend>Formulaire de création :</legend>
         <p>
@@ -33,6 +33,7 @@
             <input type="submit" value="Envoyer" />
         </p>
     </fieldset>
+    <input type='hidden' name='action' value='creerDepuisFormulaire'>
 </form>
 </body>
 </html>

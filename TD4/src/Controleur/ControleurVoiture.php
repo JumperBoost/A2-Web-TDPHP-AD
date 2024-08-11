@@ -19,6 +19,20 @@ class ControleurVoiture {
         self::afficherVue("voiture/formulaireCreation.php");
     }
 
+    public static function creerDepuisFormulaire() : void {
+        $voiture = ModeleVoiture::construireDepuisTableau([
+            'immatriculation' => $_GET['immatriculation'],
+            'marque' => $_GET['marque'],
+            'couleur' => $_GET['couleur'],
+            'nbSieges' => $_GET['nbSieges']
+        ]);
+
+        if($voiture->ajouter())
+            self::afficherListe();
+        else
+            self::afficherVue("voiture/erreur.php");
+    }
+
     private static function afficherVue(string $cheminVue, array $parametres = []) : void {
         extract($parametres); // Crée des variables à partir du tableau $parametres
         require "../vue/$cheminVue"; // Charge la vue
