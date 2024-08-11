@@ -8,7 +8,7 @@
         <?php
         /** @var array $voitures */
         foreach ($voitures as $voiture)
-            echo '<p> Voiture d\'immatriculation ' . $voiture->getImmatriculation() . '.</p>';
+            echo '<p> Voiture d\'immatriculation <a href="?action=afficherDetail&immatriculation=' . $voiture->getImmatriculation() . '">' . $voiture->getImmatriculation() . '</a>.</p>';
         ?>
     </body>
 </html>

@@ -124,6 +124,6 @@ class ModeleVoiture
 
     // Pour pouvoir convertir un objet en chaîne de caractères
     /*public function __toString() : string {
-        return "ModeleVoiture $this->immatriculation de marque $this->marque (couleur $this->couleur, $this->nbSieges sieges)";
+        return "Voiture $this->immatriculation de marque $this->marque (couleur $this->couleur, $this->nbSieges sieges)";
     }*/
 }
